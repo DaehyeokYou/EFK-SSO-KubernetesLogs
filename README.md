@@ -1,1 +1,1 @@
-# EFK-SSO-KubernetesLogs-
+# EFK-SSO-KubernetesLogs
