@@ -1,6 +1,9 @@
 # EFK-SSO-KubernetesLogs
 EFK on Linux collect Kubernetes logs and Link Kibana and SSO(KeyCloak) 
 
+![Architecture](https://user-images.githubusercontent.com/17021291/102052699-d4d14d80-3e29-11eb-8853-8f7943185e11.jpg)
+
+
 1. Installation<br>
   a. Install Opendistro for Elasticsearch : https://opendistro.github.io/for-elasticsearch-docs/docs/install/rpm/<br>
   b. Install Opendistro for Elasticsearch-kibana : https://opendistro.github.io/for-elasticsearch-docs/docs/kibana/<br>
