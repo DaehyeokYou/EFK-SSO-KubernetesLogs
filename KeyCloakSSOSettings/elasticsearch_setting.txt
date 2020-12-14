@@ -1,0 +1,8 @@
+Edit your elasticserarch security plug-in config.yml (/usr/share/elasticsearch/plugins/opendistro_security/securityconfig/config.yml)
+
+Write <words> in the file according to your situation.
+<Keycloak URL>, <realm>
+
+after edit config.yml
+!!! you must run shell script that reload elasticsearch's config !!!
+sudo /usr/share/elasticsearch/plugins/opendistro_security/tools/securityadmin.sh --diagnose -f /usr/share/elasticsearch/plugins/opendistro_security/securityconfig/config.yml -icl -nhnv -cert /etc/elasticsearch/kirk.pem -cacert /etc/elasticsearch/root-ca.pem -key /etc/elasticsearch/kirk-key.pem -t config

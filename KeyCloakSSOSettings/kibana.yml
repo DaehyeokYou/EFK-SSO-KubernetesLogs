@@ -1,0 +1,46 @@
+# Copyright 2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+#
+# Licensed under the Apache License, Version 2.0 (the "License").
+# You may not use this file except in compliance with the License.
+# A copy of the License is located at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# or in the "license" file accompanying this file. This file is distributed
+# on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+# express or implied. See the License for the specific language governing
+# permissions and limitations under the License.
+ # Default Kibana configuration from kibana-docker.
+ # server.name: kibana
+# 0.0.0.0 으로 설정하면 외부접속 가능 단축하여 0 으로 설정가능
+server.host: '0'
+# elasticsearch 접속 주소
+elasticsearch.hosts: [ "https://localhost:9200" ]
+elasticsearch.ssl.verificationMode: none
+# elasticsearch 접속 아이디 /암호
+elasticsearch.username: kibanaserver
+elasticsearch.password: kibanaserver
+elasticsearch.requestHeadersWhitelist: ["securitytenant","Authorization","security_tenant"]
+elasticsearch.requestTimeout: 50000
+# 키바나 로그 설정 위치
+logging.dest: /var/log/kibana/kibana.log
+# 키바나 타임존 설정
+logging.timezone: Asia/Seoul
+logging.verbose: true
+#연동 방식 설정
+opendistro_security.auth.type: openid
+#연동 주소
+opendistro_security.openid.connect_url: <keycloak URL>/auth/realms/<realm>/.well-known/openid-configuration
+# opendistro_security.openid.client_secret 값은 필수 항목이지만(없으면 kibana 구동 안됨) client 가 public 인 경우에는 임의의 값을 셋팅하여 사용하고,
+# confidential인 경우에만 keycloak에서 제공하는 secret 정보를 사용한다.
+opendistro_security.openid.client_id: <Keycloak Client ID>
+opendistro_security.openid.client_secret: <Keycloak Client Secret>
+#로그인 세션 없을때 이동하는 로그인 주소
+opendistro_security.openid.base_redirect_url : <Redirec URL>
+#쿠키 사용 설정
+opendistro_security.cookie.secure: false
+opendistro_security.multitenancy.enabled: false
+# 플러그인 미사용 설정
+newsfeed.enabled: false
+telemetry.optIn: false
+telemetry.enabled: false

@@ -1,0 +1,4 @@
+Edit your kibana.yml (etc/kibana/kibana.yml)
+
+Write <words> in the file according to your situation.
+<Keycloak URL>, <realm>, <Keycloak Client ID>, <Keycloak Client Secret>
